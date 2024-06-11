@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32122d43db746614db90415744f945b0, type: 3}
+  m_Name: CollectSO
+  m_EditorClassIdentifier: 
+  listCollectInfor:
+  - collectName: Coin
+    collectCount: 550
+    totalCount: 0
+    totalCoin: 0
+    score: 0
+    isPlayerData: 1
+  - collectName: Skeleton
+    collectCount: 0
+    totalCount: 0
+    totalCoin: 0
+    score: 0
+    isPlayerData: 0
+  - collectName: Goblin
+    collectCount: 7
+    totalCount: 7
+    totalCoin: 0
+    score: 0
+    isPlayerData: 0
+  - collectName: Flying Eye
+    collectCount: 0
+    totalCount: 0
+    totalCoin: 0
+    score: 0
+    isPlayerData: 0
+  - collectName: Mushroom Creepy
+    collectCount: 0
+    totalCount: 0
+    totalCoin: 0
+    score: 0
+    isPlayerData: 0
