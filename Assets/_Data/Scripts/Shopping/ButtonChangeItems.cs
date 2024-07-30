@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -47,6 +47,7 @@ public class ButtonChangeItems : BaseButton
         //shopping.SaveShoppingItems.SaveFirstItemSelected();
     }
 
+    //Lọc qua item bán rồi lấy itemInfor, nếu đúng item đang chọn thì đổi tên, giá, gọi ChangeStatusItem và LoadStatsItem
     public void ChangeItems(int index)
     {
         for (int i = 0; i < shopping.ItemsToSell.Count; i++)
@@ -69,6 +70,8 @@ public class ButtonChangeItems : BaseButton
         shopping.ActivePrice();
     }
 
+    //Nếu chuyển qua item nào mà đã mở thì lưu item đó
+    //Mục đích nếu người chơi chuyển qua item 1 đã mở rồi chuyển qua item 2 chưa mở xong nhấn chơi thì nó lấy item 1 đã mở vào game
     protected void SaveItemChange(ItemInfor itemInfor)
     {
         if (!itemInfor.GetIsOpen()) return;

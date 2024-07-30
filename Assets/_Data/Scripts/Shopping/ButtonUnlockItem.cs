@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -35,16 +35,20 @@ public class ButtonUnlockItem : BaseButton
         lockItemImage = shopping.transform.Find("LockItem");
     }
 
+    //Tìm itemInfor bằng cái item đang chọn
+    //Sau đó trừ tiền, nếu không trừ được(false) thì không unclock
+    //Sau đó mình SetIsOpen rồi gọi ChangeStatusItem, lưu dữ liệu lên playfab, lưu item vào PlayerPrefs để lần sau vào game nó sẽ tự động chuyển sang
+
     protected void UnLockItems()
     {
         ItemInfor itemInfor = shopping.GetItemSelected();
         if (itemInfor == null) return;
-        if (itemInfor.GetIsOpen()) return;
+        //if (itemInfor.GetIsOpen()) return;
         bool isCoin = CoinBank.Instance.DetuctCoin(itemInfor.Price);
         if (!isCoin) return;    
 
         itemInfor.SetIsOpen(true);
-        lockItemImage.gameObject.SetActive(false);
+        //lockItemImage.gameObject.SetActive(false);
         ChangeStatusItem();
 
         shopping.SaveShoppingItems.SaveItemsUnlockedForPlayFab();
@@ -66,6 +70,8 @@ public class ButtonUnlockItem : BaseButton
         }
     }
 
+    //Lọc qua các item và lấy isOpen 
+    //Nếu true thì bật hình ảnh và tắt ổ khoá, false thì ngược lại
     public void ChangeStatusItem()
     {
         ItemInfor itemInfor = shopping.GetItemSelected();
