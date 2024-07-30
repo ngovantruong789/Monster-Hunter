@@ -52,7 +52,7 @@ public class CollectedManager : TruongMonoBehaviour
                 collectSO.SetToTalCount(statistic.StatisticName, statistic.Value);
         });
     }
-    public void AddStats(string name, int count)
+    public void AddStatsFromEnemy(string name, int count)
     {
         foreach (ScoreCollectInfor infor in collectSO.listCollectInfor)
         {
@@ -60,7 +60,7 @@ public class CollectedManager : TruongMonoBehaviour
             infor.totalCoin += count;
             if (infor.isPlayerData) continue;
             infor.collectCount += 1;
-            if (infor.totalCoin < infor.collectCount) infor.totalCoin = infor.collectCount;
+            //if (infor.totalCoin < infor.collectCount) infor.totalCoin = infor.collectCount;
         }
     }
 
@@ -98,7 +98,7 @@ public class CollectedManager : TruongMonoBehaviour
             if (infor.isPlayerData && infor.collectName == "Coin")
             {
                 int coin = CoinBank.Instance.Coin;
-                infor.totalCoin = totalCoin;
+                //infor.totalCoin = totalCoin;
                 totalCoin += coin;
                 if(totalCoin >= CoinBank.Instance.MaxCoin) totalCoin = CoinBank.Instance.MaxCoin;
                 Dictionary<string, string> data = new Dictionary<string, string>();

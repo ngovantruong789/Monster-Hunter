@@ -56,7 +56,7 @@ public class EnemyDMR : DamageReceiver
 
     protected void DespawnObject()
     {
-        CollectedManager.Instance.AddStats(enemyController.name, enemyController.EnemySO.coin);
+        CollectedManager.Instance.AddStatsFromEnemy(enemyController.name, enemyController.EnemySO.coin);
         EnemySpawner.Instance.Despawn(transform.parent);
     }
 
